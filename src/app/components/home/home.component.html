@@ -4,18 +4,19 @@
     <form (ngSubmit)="onSubmit()" #f1="ngForm">
         <div>
             <p>Please Submit your Image</p>
-            <input type="file" id = "myFile" (change) = "newFile($event)">
+            <input type="file" id = "myFile" required (change) = "newFile($event)">
         </div>
         <div>
             <p>Please Submit the two Images You wish to Compare</p>
-            <input type="file" id = "compFile1"  (change) = "newFile($event)">
-            <input type="file" id = "compFile2"  (change) = "newFile($event)">
+            <input type="file" id = "compFile1" required (change) = "newFile($event)">
+            <input type="file" id = "compFile2" required (change) = "newFile($event)">
         </div>
         <button type="submit">Submit</button>
     </form>
 </div>
 
 <div align = "center">
+    <p>{{warning}}</p>
     <p>Picture A vs B: {{compare1}}</p>
     <p>Picture A vs C: {{compare2}}</p>
 </div>
